@@ -1,5 +1,11 @@
 pipeline {
     agent any
+stages {
+        stage('clone') {
+            steps {
+              git branch: 'main', credentialsId: 'fcd8cc9f-d037-4968-8420-14d2f105e3cf', url: 'https://github.com/Shravanee-Pawar/Java.git'
+            }
+        }
 
     stages {
         stage('compile') {
@@ -13,4 +19,5 @@ pipeline {
             }
         }
     }
+}
 }
